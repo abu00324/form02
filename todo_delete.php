@@ -7,7 +7,7 @@ $id = $_GET['id'];
 
 $pdo = connect_to_db();
 
-$sql = 'DELETE FROM form_table WHERE id=:id';
+$sql = 'DELETE FROM info_table WHERE id=:id';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_STR);

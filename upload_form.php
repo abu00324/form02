@@ -1,28 +1,52 @@
+<?php
+?>
+<!-- ①フォームの説明 -->
+<!-- ②$_FILEの確認 -->
+<!-- ③バリデーション -->
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css2/main.css">
-  <title>contact</title>
-</head>
-
-
-<body>
-  <form form enctype="multipart/form-data"  action="file_updata" method="POST">
-
-  <h1>資料ダウンロード </h1>
-  <div class="contact-bg">
-    <div class="contact-area inner">
-     <div class="file-up">
-        <input type="hidden" name="MAX_FILE_SIZE" value="5" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アップロードフォーム</title>
+  </head>
+  <style>
+    body {
+      padding: 30px;
+      margin: 0 auto;
+      width: 50%;
+    }
+    textarea {
+      width: 98%;
+      height: 60px;
+    }
+    .file-up {
+      margin-bottom: 10px;
+    }
+    .submit {
+      text-align: right;
+    }
+    .btn {
+      display: inline-block;
+      border-radius: 3px;
+      font-size: 18px;
+      background: #67c5ff;
+      border: 2px solid #67c5ff;
+      padding: 5px 10px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <form enctype="multipart/form-data" action="./file_updata.php" method="POST">
+      <div class="file-up">
+        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
         <input name="img" type="file" accept="image/*" />
       </div>
-<div>
+      <div>
         <textarea
           name="caption"
-          placeholder="140文字以下"
+          placeholder="キャプション（140文字以下）"
           id="caption"
         ></textarea>
       </div>
@@ -30,19 +54,7 @@
         <input type="submit" value="送信" class="btn" />
       </div>
 
-
-
-
-        <span class="message-notice"><span class="essential">必須</span>は必須項目です。</span>
-      </p>
-    
-     <div class="contact-inner">
-        
-          <table class="contact-table">
-
-
-
-            <tr class="table-list">
+ <tr class="table-list">
               <th>
                 <label for="name">施設/法人名<span class="essential">必須</span></label>
               </th>
@@ -181,44 +193,10 @@
         </section>
         <a href="todo_read.php">一覧画面</a>
 
-<script>
-
-  const open = document.getElementById('open')
-  const close = document.getElementById('close')
-  const modal = document.getElementById('modal')
-  const mask = document.getElementById('mask')
-
-  open.addEventListener('click',() =>{
-    modal.classList.remove('hidden')
-    mask.classList.remove('hidden')
-  });
-
-  close.addEventListener('click',() =>{
-    modal.classList.add('hidden')
-    mask.classList.add('hidden')
-  });
-
-  mask.addEventListener('click',() =>{
-    modal.classList.add('hidden')
-    mask.classList.add('hidden')
-  });
-</script>
 
 
-      </div>
-    </div>
-  </div>
-  </form>
 
-</body>
 
+    </form>
+  </body>
 </html>
-
-
-
-
-
-
-
-   
-     

@@ -1,5 +1,5 @@
 <?php
-// 入力項目のチェック
+// 入å力項目のチェック
 include('functions.php');
 
 
@@ -26,7 +26,7 @@ $comment = $_POST['comment'];
 $pdo = connect_to_db();
 
 
-$sql = 'UPDATE form_table SET company=:company, kind=kind, number=number, person=:person, mail=:mail, phone=:phone, kown=kown, time=time, comment=:comment, updated_at=now() WHERE id=:id';
+$sql = 'UPDATE info_table SET company=:company, kind=kind, number=number, person=:person, mail=:mail, phone=:phone, kown=kown, time=time, comment=:comment, updated_at=now() WHERE id=:id';
 
 
 $stmt = $pdo->prepare($sql);

@@ -25,13 +25,17 @@ $comment = $_POST['comment'];
 // DB接続
 $pdo = connect_to_db();
 
-$sql = 'INSERT INTO form_table (id, company, kind, number, person, mail, phone, kown, time, comment, created_at, updated_at) VALUES (NULL, :company, kind, number, :person, :mail, :phone, kown, time, :comment, now(), now())';
+$sql = 'INSERT INTO form_table (id, company, kind, number, person, mail, phone, kown, time, comment, created_at, updated_at) VALUES (NULL, :company, :kind, :number, :person, :mail, :phone, :kown, :time, :comment, now(), now())';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':company', $company, PDO::PARAM_STR);
+$stmt->bindValue(':kind', $kind, PDO::PARAM_STR);
+$stmt->bindValue(':number', $number, PDO::PARAM_STR);
 $stmt->bindValue(':person', $person, PDO::PARAM_STR);
 $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
 $stmt->bindValue(':phone', $phone, PDO::PARAM_STR);
+$stmt->bindValue(':kown', $kown, PDO::PARAM_STR);
+$stmt->bindValue(':time', $time, PDO::PARAM_STR);
 $stmt->bindValue(':comment', $comment, PDO::PARAM_STR);
 
 try {
